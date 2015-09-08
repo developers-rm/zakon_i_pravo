@@ -23,6 +23,7 @@ class ControllerContentTree extends Controller {
     public function IndexAction($param = array(), &$vParam = array(), &$vShab = array()) {
         $vParam['item'] = $this->GetModel()->GetItem($param['id']);
         $vParam['items'] = $this->GetModel()->GetItems("p_id = {$param['id']}");
+        
         if (!$vParam['item'])
             $this->NotFoundAction();
         else {

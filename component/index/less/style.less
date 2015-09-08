@@ -461,7 +461,7 @@ header#header {
                     position:absolute;
                     right:-162px;
                     top:-106px;
-                    height:107px;
+                    height:134px;
                     z-index:99;
                     .inside {
                         .border-radius(50%);
@@ -476,17 +476,19 @@ header#header {
                             .align-vertical();
                             .uppercase;
                             color:#285d9e;
+                            height:110px;
                         }
+                        &:before {
+                                position:absolute;
+                                content:"";
+                                bottom:-81px;
+                                width:103px;
+                                height:65px;
+                                left:63px;
+                                background:url("/images/elements/ii.png") no-repeat left top;
+                            }
                     }
-                    &:before {
-                        position:absolute;
-                        content:"";
-                        bottom:-88px;
-                        width:103px;
-                        height:65px;
-                        left:63px;
-                        background:url("/images/elements/ii.png") no-repeat left top;
-                    }
+                    
 
                 }
                 &:nth-of-type(3n) {

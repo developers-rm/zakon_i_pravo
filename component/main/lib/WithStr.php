@@ -135,5 +135,16 @@ class WithStr {
 	static public function ToPrice($string) {
 		return strrev(chunk_split(strrev($string), 3, ' '));
 	}
+        
+         static public function CuteContentByLength($string = "", $length = 0) {
+            $lengthString = strlen($string);
+            $cuteString = mb_substr($string, 0, $length);
+
+            if (strlen($cuteString) < $lengthString) {
+                return $cuteString . "...";
+            } else {
+                return $cuteString;
+            }
+        }
 
 }
