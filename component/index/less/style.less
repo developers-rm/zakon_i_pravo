@@ -98,6 +98,28 @@ p {
     margin:0 auto;
 }
 
+.pagenation {
+    ul {
+        li {
+            display:inline-block;
+            
+            a {
+                display:block;
+                padding:4px;
+                width:12px;
+                text-align:center;
+                background-color:@blue;
+                color:@white !important;
+                font-size:14px;
+            }
+            a.active {
+               background-color:hsl(0, 72%, 50%);
+               font-weight:bold;
+            }
+        }
+    }
+}
+
 .bottom_line(@width:@border-line-width) {
     border-bottom: 1px solid hsl(215, 84%, 27%);
     bottom: 0;
@@ -497,6 +519,13 @@ header#header {
 
             }
         }
+        
+        #read-response {
+            header, time {
+                .setpadding(0, 0 0 10px);
+                display:block;
+            }
+        }
 
 
         #buttons {
@@ -617,11 +646,12 @@ header#header {
         }
 
         #news {
-            .setpadding(0, 40px 0 0);
+            .setpadding(0 0 10px, 40px 0 0);
             .n-time {
                 font-size:13.50;
                 font-family:Franklin Gothic Medium;
                 color:@black;
+                display:block;
                 .setpadding(0, 10px 0 10px);
             }
             .n-header {
@@ -629,11 +659,14 @@ header#header {
                 .setpadding(0,0 0 10px);
                 h1, h2, h3 {
                     .setpadding(0,0);
+                    line-height: 22px;
                 }
             }
+            
             p {
                 font-size:12.74px;
             }
+            
             a.readnext {
                 .button(@blue, @white, auto, 0, 8px);
                 .uppercase;
@@ -648,6 +681,7 @@ header#header {
                     text-decoration:underline;
                 }
             }
+            
             figure {
                 .setpadding(0,0 110px 20px 0);
                 display:inline-block;
@@ -659,6 +693,16 @@ header#header {
                 }
                 &:nth-of-type(3) {
                     margin-right:0;
+                }
+            }
+            
+            .pagenation {
+                .setpadding(0,0 0 10px);
+                ul {
+                    .setpadding(0,0);
+                    a {
+                        text-decoration:none;
+                    }
                 }
             }
         }

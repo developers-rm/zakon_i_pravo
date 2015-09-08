@@ -18,6 +18,10 @@ class ControllerResponses extends Controller {
         return parent::GetModel('responses');
     }
     
+    protected function GetModelContent() {
+        return parent::GetModel('content');
+    }
+    
     public function DownloadFileAction($param = array(), &$vParam = array(), &$vShab = array()) {
         if(!isset($_FILES) || empty($_FILES)) {
             echo "Файл изображения не был передан";
@@ -38,6 +42,13 @@ class ControllerResponses extends Controller {
         die;
     }
     
+    public function ReadAction($param = array(), &$vParam = array(), &$vShab = array()) {
+        $vParam["item"] = $this->GetModelContent()->GetItem(9);
+        $result = $this->GetModel()->GetItem($param["id"]);
+        $vParam['item_response'] = $result;
+        $vShab['content'] = $this->ViewPath."read.phtml";
+    }
+    
     public function AddResponseAction($param = array(), &$vParam = array(), &$vShab = array()) {
         $add = $this->GetModel()->AddResponse($param["data"]);
         if($add == true) {
@@ -47,8 +58,18 @@ class ControllerResponses extends Controller {
     }
     
     public function IndexAction($param = array(), &$vParam = array(), &$vShab = array()) {
+        $item = $this->GetModelContent()->GetItem($param["id"]);
+        if ($item['have_items']) {
+            $page = isset($param['page']) && (int) $param['page'] ? (int) $param['page'] : 1;
+            $count = $this->GetModel()->GetCount();
+            $vParam["responses"] = $this->GetModel()->GetActiveItems(
+            0, $page, $item['items_per_page'], "", ""
+            );
+        }
+        $vParam["item"] = $item;
+        $vParam['pagenation'] = $this->GetModelContent()->MakePagenation($page, $count, $item['items_per_page'],
+                                                                         array("url" => app::I()->MakeUrl("responses", "index", array("id" => $param["id"]))));
         $vParam['number_response'] = uniqid();
-        $vParam["responses"] = $this->GetModel()->GetItems();
         $vShab['content'] = $this->ViewPath."index.phtml";
     }
 }

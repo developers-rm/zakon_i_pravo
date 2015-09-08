@@ -9,11 +9,17 @@
                         </div>
                     </div>
                 </div>
-                <a class="photo" href="#" style="background:url(/img/responses/<?=$value["number_response"]?>/attachment.jpg)"></a>
+                <a class="photo" href="<?=app::I()->MakeUrl("responses", "read", array("id" => $value["id"]))?>" 
+                   style="background:url(/img/responses/<?=$value["number_response"]?>/attachment.jpg)">
+                </a>
                 <div class="name"><?=$value["name"]?></div>
             </div>
         <?php } ?>
-        
+    
+        <?php if (!empty($pagenation)) { ?>
+            <?php include ROOT_PATH.'/component/index/view/pagenation/index.phtml'; ?>
+        <?php } ?>
+    
     <?php } ?>
     
 </section>

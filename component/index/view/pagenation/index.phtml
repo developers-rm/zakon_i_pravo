@@ -1,0 +1,11 @@
+<nav class="pagenation">
+    <ul>
+        <?php foreach ($pagenation as $i => $value) { ?>
+            <li>
+                <a href="<?= $value["separate"] . "page=" . $value["page"] ?>" class="<?= $value["class"] ?>">
+                    <?= $value["page"] ?>
+                </a>
+            </li>
+        <?php } ?>
+    </ul>
+</nav>

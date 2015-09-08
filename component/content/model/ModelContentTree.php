@@ -70,5 +70,29 @@ class ModelContentTree extends Model {
 		}
 		return array_reverse($res);
 	}
+        
+        public function MakePagenation($page, $count, $pageCount, $params = array()) {
+            if($count != 0) {
+                $arrayPages = array();
+                
+                if($count > $pageCount) {
+                $total = @(($count - 1) / $pageCount) + 1;
+                $pages = "";
+                $url = $params["url"];
+                $sepTemp = parse_url($params["url"]);
+
+                $separate = (isset($sepTemp["path"]) && $sepTemp["path"] !== "/") ? "?" : "&";
+
+                for ($i = 1; $i <= $total; ++$i) {
+                    $arrayPages[$i]["class"] = $i == $page ? "active" : "";
+                    $arrayPages[$i]["href"] = $url;
+                    $arrayPages[$i]["separate"] = $separate;
+                    $arrayPages[$i]["page"] = $i;
+                }
+                return $arrayPages;
+            }
+        }
+        
+    }
 
 }

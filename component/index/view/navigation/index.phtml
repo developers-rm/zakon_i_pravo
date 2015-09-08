@@ -1,20 +1,26 @@
 <ul>
     <li>
-        <a href="/">о нас</a>
+        <a href="/"
+           class="<?=isset($item["id"]) && $item["id"] == 1 ? "active" : ""?>">о нас</a>
     </li>
     <li>
-        <a href="<?=app::I()->MakeUrl("news", "index", array("id" => 3))?>">новости</a>
+        <a href="<?=app::I()->MakeUrl("content", "index", array("id" => 3))?>"
+           class="<?=isset($item["id"]) && $item["id"] == 3 || $item["p_id"] == 3 ? "active" : ""?>">новости</a>
     </li>
     <li>
-        <a href="<?=app::I()->MakeUrl("content", "index", array("id" => 5))?>">цены</a>
+        <a href="<?=app::I()->MakeUrl("content", "index", array("id" => 5))?>"
+           class="<?=isset($item["id"]) && $item["id"] == 5 ? "active" : ""?>">цены</a>
     </li>
     <li>
-        <a href="<?=app::I()->MakeUrl("content", "index", array("id" => 6))?>">услуги</a>
+        <a href="<?=app::I()->MakeUrl("content", "index", array("id" => 6))?>"
+        class="<?=isset($item["id"]) && $item["id"] == 6 || $item["p_id"] == 6 ? "active" : ""?>">услуги</a>
     </li>
     <li>
-        <a href="<?=app::I()->MakeUrl("content", "index", array("id" => 8))?>">контакты</a>
+        <a href="<?=app::I()->MakeUrl("content", "index", array("id" => 8))?>"
+        class="<?=isset($item["id"]) && $item["id"] == 8 ? "active" : ""?>">контакты</a>
     </li>
     <li>
-        <a href="<?=app::I()->MakeUrl("responses", "index", array("id" => 9))?>">отзывы</a>
+        <a href="<?=app::I()->MakeUrl("responses", "index", array("id" => 9))?>"
+        class="<?=isset($item["id"]) && $item["id"] == 9 || $item["p_id"] == 9 ? "active" : ""?>">отзывы</a>
     </li>
 </ul>

@@ -1,0 +1,23 @@
+<div id="bg-blue">
+    <header class="titlul-page"><h1>Отзыв от: <?=$item_response["name"]?></h1></header>
+
+    <aside id="left-col">
+        <section id="read-response">
+            <header><h2><?=$item_response["name"]?></h2></header>
+            <time datetime="<?=WithDate::GetUnixDateToDate($item_response["timepost"])?>">
+                Дата: <?=WithDate::RebuildDate($item_response["timepost"], "d-m-Y")?>
+            </time>
+            <p><?=$item_response["text"]?></p>
+        </section>
+    </aside>
+
+    <section id="right-col">
+        <section id="img-promo-response"></section>
+        <?php include ROOT_PATH.'/component/index/view/social_block.phtml'; ?>
+        
+        <section id="form">
+            <header><h2>бесплатная юридическая консультация</h2></header>
+            <?php include ROOT_PATH . '/component/index/view/forms/main.phtml'; ?>
+        </section>
+    </section>
+</div>

@@ -1,11 +1,15 @@
-<?php if(isset($items) && !empty($items)) { ?>
+<?php if (isset($items) && !empty($items)) { ?>
     <ul>
-        <?php foreach($items as $index => $value) { ?>
+        <?php foreach ($items as $index => $value) { ?>
             <li>
-                <a href="<?=app::I()->MakeUrl("content", "index", array("id" => $value["id"]))?>">
-                    <?=$value["name"]?>
+                <a href="<?= app::I()->MakeUrl("content", "index", array("id" => $value["id"])) ?>">
+                    <?= $value["name"] ?>
                 </a>
             </li>
         <?php } ?>
     </ul> 
+
+    <?php if (!empty($pagenation)) { ?>
+        <?php include ROOT_PATH.'/component/index/view/pagenation/index.phtml'; ?>
+    <?php } ?>
 <?php } ?>

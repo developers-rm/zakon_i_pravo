@@ -34,10 +34,16 @@ class ControllerContentTree extends Controller {
             
             if ($vParam['item']['have_items']) {
                 $page = isset($param['page']) && (int) $param['page'] ? (int) $param['page'] : 1;
+                $count = $this->GetModel()->GetCount("p_id = {$param['id']}");
                 $vParam['items'] = $this->GetModel()->GetActiveItems(
-                $param['id'], $page, $vParam['item']['items_per_page'], $vParam['item']['order_by'], $vParam['item']['order_type']
+                    $param['id'], $page, $vParam['item']['items_per_page'], $vParam['item']['order_by'], $vParam['item']['order_type']
                 );
+                $vParam['pagenation'] = $this->GetModel()->MakePagenation($page, $count, $vParam['item']['items_per_page'],
+                                                                          array("url" => app::I()->MakeUrl("content", "index", 
+                                                                                array("id" => $param["id"]))));
+                
             }
+
             $vParam['module_name'] = $this->ModuleName;
             if ($vParam['item']['shablon_name'])
                 $vShab['content'] = $this->ViewPath . $vParam['item']['shablon_name'];

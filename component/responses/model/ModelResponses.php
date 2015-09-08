@@ -27,6 +27,16 @@ class ModelResponses extends Model {
         }
     }
     
+    public function GetActiveItems($pId, $page = 0, $itemsPerPage = 0, $orderBy = '', $orderType = 0) {
+	if ($itemsPerPage)
+            $limit = (0 + ($page - 1) * $itemsPerPage) . ",$itemsPerPage";
+	else
+            $limit = 0;
+            $where = "`p_id` = {$pId} and `active` = 1";
+
+            return $this->GetItems($where, $limit);
+    }
+
     public function AddResponse(array $params) {
         $add = $this->add(array("name" => $params["name"], 
                                 "voice" => $params["voice"], 
