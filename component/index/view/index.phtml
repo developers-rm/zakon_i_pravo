@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <? if (isset($shablon_name['head'])) include ROOT_PATH . $shablon_name['head']; ?>
+    </head>
+    <body>
+        <section id="wrapper">
+            <header id="header">
+                <?php include ROOT_PATH.'/component/index/view/top/top.phtml';?>
+            </header>
+            
+            <section id="content-wrapper">
+                <?php if (isset($shablon_name['content'])) include ROOT_PATH.$shablon_name['content']; ?>
+            </section>
+            
+            <footer>
+                <?php include ROOT_PATH.'/component/index/view/bottom/bottom.phtml';?>
+            </footer>            
+        </section>    
+    </body>
+</html>

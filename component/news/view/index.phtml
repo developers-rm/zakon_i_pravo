@@ -1,0 +1,26 @@
+<div id="bg-blue">
+    <header class="titlul-page"><h2>Новости:</h2></header>
+    <section class="content">
+        <div class="content-section">
+            <article id="news">
+                <?php if(isset($items) && !empty($items)) { ?>
+                    <?php foreach($items as $index => $it_news) { ?>
+                        <figure>
+                            <img src="<?=WithImage::I()->GetImgDir("/img/content_tree/{$it_news["id"]}/img_anons")?>" alt="" title="" />
+                            <figcaption>
+                                <header class="n-header">
+                                    <time class="n-time" datetime="<?=WithDate::DateTimeToDate($it_news["date_create"])?>">
+                                        <?=WithDate::RebuildDate(WithDate::DateToUnix($it_news["date_create"]), "d.m.Y")?>
+                                    </time>
+                                    <h2><?=$it_news["name"]?></h2>
+                                </header>
+                                <?=$it_news["short_text"]?>
+                                <a href="<?=app::I()->MakeUrl("content", "index", array("id" => $it_news["id"]))?>" class="readnext">Подробности</a>
+                            </figcaption>
+                        </figure>
+                    <?php } ?>
+                <?php } ?>
+            </article>
+        </div>
+    </section>
+</div>

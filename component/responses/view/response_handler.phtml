@@ -1,0 +1,19 @@
+<section id='resp'>
+    <?php if(isset($responses)) { ?>
+        <?php foreach ($responses as $key => $value) { ?>
+            <div class="response_section">
+                <a class="photo" href="#" style="background:url(/img/responses/<?=$value["number_response"]?>/attachment.jpg)"></a>
+                <div class="name"><?=$value["name"]?></div>
+                <div class="helper">
+                    <div class="inside">
+                        <div class="text">
+                            <?=$value["text"]?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <?php } ?>
+        
+    <?php } ?>
+    
+</section>

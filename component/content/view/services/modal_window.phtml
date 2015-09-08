@@ -1,0 +1,45 @@
+<section id="modal_services" class="modal">
+    <header class="top-side">
+        <div class="m_title"><h1 data-popup-title></h1></div>
+        <div class="m_close" data-popup-close>
+            <a href="javascript:;" onclick="$('#modal_services').popup('onClose', {})">X</a>
+        </div>
+    </header>
+
+    <div class="m_content" data-popup-content>
+        <section id="modal_form_section">
+            <header><h1>Заказать услугу</h1></header>
+            <div id="handler_service">
+                <form action="<?=app::I()->MakeUrl("index", "send_form", array("id" => $item["id"], "mail_theme" => "Заказ услуги {$item["name"]}"))?>" method="POST" id="service_form">
+                    <div class="row">
+                        <label for="services">Услуга</label>
+                        <select name="mail[services]" id="services" style="width:200px">
+                            <option><?=$item["name"]?></option>
+                        </select>
+                    </div>
+                    <div class="row">
+                        <label for="name">ФИО</label>
+                        <input name="mail[name]" type="text" placeholder="Ваше ФИО" id="name" required="" />
+                    </div>
+                    <div class="row">
+                        <label for="phone">телефон</label>
+                        <input type="tel" name="mail[phone]" placeholder="Ваш телефон" id="phone" required="" />
+                    </div>
+
+                    <div class="row signature">
+                        <input type="checkbox" name="signature" id="signature_serv" />
+                        <label for="signature_serv">Я согласен с условиями обработки персональных данных</label>
+                    </div>
+
+                    <div class="row">
+                        <input type="submit" name="submit" value="Отправить заявку" />
+                    </div>
+                </form>
+            </div>
+        </section>
+    </div>
+</section>
+
+<script type="text/javascript">
+    var form = new listen_form({'id_form':'#service_form', 'handler':'#handler_service'});
+</script>

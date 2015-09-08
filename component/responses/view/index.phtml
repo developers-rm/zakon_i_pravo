@@ -1,0 +1,23 @@
+<?php include 'window/main.phtml' ?>
+
+<div id="bg-blue">
+    <header class="titlul-page"><h1>Наши отзывы:</h1></header>
+
+    <aside id="left-col">
+        <?php include 'response_handler.phtml' ?>
+        <section id="buttons">
+            <a href="javascript:;" class="button" id="open_response">Оставить отзыв</a>
+            <a href="#" class="button like">Мне нравится</a>
+        </section>
+    </aside>
+
+    <section id="right-col">
+        <section id="img-promo-response"></section>
+        <?php include ROOT_PATH.'/component/index/view/social_block.phtml'; ?>
+        
+        <section id="form">
+            <header><h2>бесплатная юридическая консультация</h2></header>
+            <?php include ROOT_PATH . '/component/index/view/forms/main.phtml'; ?>
+        </section>
+    </section>
+</div>

@@ -1,0 +1,22 @@
+<div id="bg-blue">
+    <header class="titlul-page"><h2>Новости:</h2></header>
+    <section class="content">
+        <div class="content-section">
+            <section id="news">
+                <article id="read-news">
+                    <div id="img-news">
+                        <img src="<?=WithImage::I()->GetImgDir("/img/content_tree/{$item["id"]}/img_anons")?>" alt="" title="" />
+                    </div>
+                    <div id="text">
+                        <header class="n-header">
+                            <time class="n-time" datetime="2015-08-25">25.08.2015</time>
+                            <h2><?=$item["name"]?></h2>
+                        </header>
+                        <?=$item["text"]?>
+                    </div>
+                    <a href="<?=app::I()->MakeUrl("news", "index", array("id" => 3))?>" id="return_to_news">Все новости</a>
+                </article>
+            </section>
+        </div>
+    </section>
+</div>

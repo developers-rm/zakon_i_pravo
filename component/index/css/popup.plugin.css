@@ -1,0 +1,100 @@
+#shadow {
+    display:none;
+    background:transparent;
+    position:fixed;
+    top:0;
+    z-index:1000;
+    width:100%;
+    height:100%;
+    filter:progid:DXImageTransform.Microsoft.Alpha(opacity=50); /* IE 5.5+*/
+    -moz-opacity: 0.5; /* Mozilla 1.6 и ниже */
+    -khtml-opacity: 0.5; /* Konqueror 3.1, Safari 1.1 */
+    opacity: 0.5; /* CSS3 - Mozilla 1.7b +, Firefox 0.9 +, Safari 1.2+, Opera 9+ */
+    background:#000;
+}
+
+#ajax_load {
+    display:none;
+    border:1px solid #EEE;
+    background-color:#fff;
+    padding:10px;
+    position:fixed;
+     z-index:99999;
+}
+
+.modal {
+    display:none;
+    position:fixed;
+    border:1px solid #000000;
+    z-index:99999;
+    background-color:#fff;
+}
+
+.modal > header.top-side {
+    height:39px;
+    overflow:hidden;
+    position:relative;
+    background-color:#14639b;
+    color:#fff;
+}
+
+
+.modal header .m_title {
+    display:table;
+    height: 100%;
+    width:100%;
+    position:absolute;
+    left:0;
+}
+
+.modal header .m_title h1 {
+    display:table-cell;
+    vertical-align:middle;
+    padding:5px 10px;
+    margin:0;
+    font-size:100%;
+    height:100%;
+    text-transform:uppercase;
+}
+
+.modal header .m_close {
+    background-color:red;
+    cursor: pointer;
+    margin: -11px 8px;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    top: 50%;
+    width: 32px;
+    height:22px;
+    display:table;
+}
+
+.modal header .m_close a:before {
+    position: absolute;
+    content:"X";
+    color:#fff;
+    font-size:100%;   
+}
+
+.modal header .m_close a {
+    text-decoration:none;
+    display:table-cell;
+    width:100%;
+    height:100%;
+    vertical-align:middle;
+}
+
+.modal .m_content {
+    min-height:30px;
+}
+
+#pls-wait {
+    height:15px;
+    background:url(/images/ajax-loader.gif) no-repeat center top;
+    text-align:center;
+}
+
+#addscripts .m_content {
+    padding:15px;
+}

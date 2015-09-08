@@ -1,0 +1,28 @@
+<section id="form_section">
+    <div id="form_section_inside">
+        <div id="form">
+            <header><h2>бесплатная юридическая консультация</h2></header>
+            <?php include ROOT_PATH.'/component/index/view/forms/main.phtml';?>
+        </div>
+        <div id="notify">
+            <div id="blueline">
+                <a href="#">сообщить О фактах коррупции</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="content">
+    <div class="content-section">
+        <article>
+            <header class="title">
+                <?=!empty($item["h1"]) ? "<h2>{$item["h1"]}</h2>" : ""?>
+            </header>
+            <?=$item["text"]?>
+        </article>
+    </div>
+    <div id="maps">
+        <header class="title"><h2>нас легко найти</h2></header>
+        <div id="map"></div>
+    </div>
+</section>

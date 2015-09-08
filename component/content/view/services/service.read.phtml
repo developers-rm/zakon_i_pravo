@@ -1,0 +1,18 @@
+<?php include 'modal_window.phtml'; ?>
+<div id="bg-blue">
+    <header class="titlul-page"><h1>Услуги:</h1></header>
+    <aside id="left-col">    
+        <article id="services-description">
+            <header><h1><?= !empty($item["h1"]) ? $item["h1"] : $item["name"] ?></h1></header>
+            <?= $item["text"] ?>
+        </article>
+        <section id="buttons">
+            <a href="#" class="button" id="open_services">Заказать услугу</a>
+            <a href="#" class="button like">Мне нравится</a>
+        </section>
+    </aside>
+    <section id="right-col">
+        <section id="img-promo-services2"></section>
+        <?php include 'rightcol.phtml'; ?>
+    </section>
+</div>

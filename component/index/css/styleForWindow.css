@@ -1,0 +1,116 @@
+.modal > header .m_close:before {
+    background: url("../images/close.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+    content: "";
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    right: 3px;
+    top: 3px;
+}
+
+
+#authorize header .m_title h1,
+#authorize header .m_title h2,
+#authorize header .m_title h3,
+#authorize header .m_title a,
+#news_modal header .m_title a {
+    font-size:100%;
+    text-transform:uppercase;
+    color:#fff;
+    text-decoration:none;
+}
+
+.modal .m_content {
+    padding:10px;
+}
+
+
+#news_modal header .m_title a {
+    font-weight:bold;
+    position:relative;
+}
+
+
+#news_modal header .m_title h1:before,
+#news_modal header .m_title h2:before,
+#news_modal header .m_title h3:before,
+#news_modal header .m_title a:before {
+    content:"\2190";
+    margin-right:10px;
+}
+
+#news_modal .m_content article.news_text {
+    padding-bottom:50px;
+    margin-bottom:30px;
+    border-bottom:2px solid #6082b0;
+}
+
+.news-container {}
+
+.news-container > header h2,
+.news-container > header h2 {
+    font-size:21px;
+    font-weight:normal;
+}
+
+.news-container > time {
+    font-size:90%;
+    color:#827e7d;
+}
+
+.news-container > time span.time:before {
+    padding:0 2px 0 2px;
+    content:"\1F552";
+    font-size:90%;
+}
+
+#news_modal .m_content footer {
+    display:flex;
+}
+
+#news_modal .m_content footer a {
+    color:#6082b0;
+    text-decoration:none;
+}
+
+#news_modal .m_content footer a.arrow-left:before {
+    content:"\2190";
+    padding-right:10px;
+}
+
+#news_modal .m_content footer a.arrow-right:after {
+    content:"\2192";
+    padding-left:10px;
+}
+
+#news_modal .m_content footer .soc_link {
+    width:643px;
+    text-align:center;
+}
+
+#news_modal .m_content footer .soc_link a {
+    margin-right:10px;
+    width:17px;
+    height:17px;
+    display:inline-block;
+}
+
+#news_modal .m_content footer .soc_link a:last-child {
+    margin-right:0;
+}
+
+a.fc {
+   background:url("../images/fc.png") no-repeat left top;
+}
+
+a.tw {
+   background:url("../images/tw.png") no-repeat left top; 
+}
+
+a.vk {
+   background:url("../images/vk.png") no-repeat left top;
+}
+
+a.od {
+   background:url("../images/od.png") no-repeat left top;
+}

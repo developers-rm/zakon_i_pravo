@@ -1,0 +1,50 @@
+<section id="modal_response" class="modal">
+    <header class="top-side">
+        <div class="m_title"><h1 data-popup-title></h1></div>
+        <div class="m_close" data-popup-close>
+            <a href="javascript:;" onclick="$('#modal_response').popup('onClose', {})">X</a>
+        </div>
+    </header>
+
+    <div class="m_content" data-popup-content>
+        <section id="modal_form_section">
+            <header><h1>Ваш отзыв</h1></header>
+            <div id="handler">
+                <form action="<?=app::I()->MakeUrl("responses", "add_response")?>" method="POST" enctype="multipart/form-data" id="form_response" data-number="<?=$number_response?>">
+                    <div class="row">
+                        <label for="w-name">Имя</label>
+                        <input name="data[name]" type="text" placeholder="Ваше Имя" id="w-name" required="" />
+                    </div>
+                    <div class="row">
+                        <label for="w-email-phone">телефон / email</label>
+                        <input type="text" name="data[voice]" placeholder="Ваш телефон / e-mail" id="w-email-phone" required="" />
+                    </div>
+                    <div class="row">
+                        <label for="w-text">Текст</label>
+                        <textarea name="data[text]" id="w-text" placeholder="Текст сообщения"></textarea>
+                    </div>
+                    <div class="row signature">
+                        <input type="checkbox" name="signature" id="signature_response" />
+                        <label for="signature_response">Я согласен с условиями обработки персональных данных</label>
+                        <input type="hidden" name="data[number]" value="<?=$number_response?>" />
+                    </div>
+                    <div class="row">
+                        <label for="click_openfile">Фото</label>
+                        <div class="click_openfile" onclick="open_file('#file')">Обзор</div>
+                        <input type="file" name="filename" style="display:none;" id="file" />
+                        <a href="javascript:;" id="download" onclick="ajax_downloader('#form_response');">Загрузить фото</a>
+                        <div id="response_status" style="margin:10px 0 0 135px;"></div>
+                        
+                    </div>
+                    <div class="row">
+                        <input type="submit" name="submit" value="Опубликовать отзыв" />
+                    </div>
+                </form>
+            </div> 
+        </section>
+    </div>
+</section>
+
+<script type="text/javascript">
+    var form_response = new listen_form({'id_form':'#form_response', 'handler':'#handler'});
+</script>
