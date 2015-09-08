@@ -27,6 +27,10 @@ class ControllerContentTree extends Controller {
             $this->NotFoundAction();
         else {
             $vParam['breadcrumbs'] = $this->GetModel()->MakeBreadcrumbs($param['id']);
+            $vParam['title'] = !empty($vParam['item']['title']) ? $vParam['item']['title'] : $vParam['item']['name'];
+            $vParam['description'] = (isset($vParam['item']['description']) ? $vParam['item']['description'] : '');
+            $vParam['keywords'] = (isset($vParam['item']['keywords']) ? $vParam['item']['keywords'] : '');
+            
             if ($vParam['item']['have_items']) {
                 $page = isset($param['page']) && (int) $param['page'] ? (int) $param['page'] : 1;
                 $vParam['items'] = $this->GetModel()->GetActiveItems(
