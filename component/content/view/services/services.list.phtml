@@ -1,5 +1,5 @@
 <?php if (isset($items) && !empty($items)) { ?>
-    <ul>
+    <ul class="animation anim_list_slidedown">
         <?php foreach ($items as $index => $value) { ?>
             <li>
                 <a href="<?= app::I()->MakeUrl("content", "index", array("id" => $value["id"])) ?>">

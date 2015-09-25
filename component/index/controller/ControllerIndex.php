@@ -60,7 +60,8 @@ class ControllerIndex extends Controller {
 	 */
 	public function IndexAction($param = array(), &$vParam = array(), &$vShab = array()) {
 		$vParam['item'] = $this->GetModelContent()->GetItem(1);
-
+                $vParam['items'] = $this->GetModelContent()->GetItems("p_id = 6");
+                
 		if ($vParam['item']) {
 			$vParam['title'] = !empty($vParam['item']['title']) ? $vParam['item']['title'] : $vParam['item']['name'];
 			$vParam['description'] = (isset($vParam['item']['description']) ? $vParam['item']['description'] : '');

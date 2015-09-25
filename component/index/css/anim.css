@@ -1,0 +1,47 @@
+@keyframes scale {
+    0% {
+        transform:scale(0);
+    }
+    
+    100% {
+        transform:scale(1);
+    }
+}
+
+@keyframes rotate {
+    0% {
+        transform:rotate(0deg);
+    }
+    
+    100% {
+        transform:rotate(720deg);
+    }
+}
+
+@keyframes slide_down {
+    0% {
+        margin-bottom:-19px; 
+    }
+    
+    100% {
+       margin-bottom:12px; 
+    }
+}
+
+.anim_list_slidedown li {
+    -moz-animation:slide_down 0.5s linear;
+    -webkit-animation:slide_down 0.5s linear;
+            animation:slide_down 0.5s linear;
+}
+
+.anim_scale {
+    -moz-animation:scale 0.5s linear;
+    -webkit-animation:scale 0.5s linear;
+            animation:scale 0.5s linear;
+}
+
+.anim_rotate {
+    -moz-animation:rotate 0.5s linear;
+    -webkit-animation:rotate 0.5s linear;
+            animation:rotate 0.5s linear;
+}

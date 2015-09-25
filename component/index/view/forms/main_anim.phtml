@@ -1,0 +1,28 @@
+<div id="handler">
+    <form action="<?=app::I()->MakeUrl("index", "send_form", array("id" => $item["id"]))?>" method="POST" id="main_form">
+        <div class="row">
+            <label for="name">фио</label>
+            <input type="text" name="mail[name]" placeholder="Ваше ФИО" id="name" required="" />
+        </div>
+        <div class="row">
+            <label for="phone">телефон</label>
+            <input type="tel" name="mail[phone]" placeholder="Ваш телефон" id="phone" required="" />
+        </div>
+        <div class="row">
+            <label for="text">сообщение</label>
+            <textarea name="mail[text]" placeholder="Ваше сообщение" id="text" required=""></textarea>
+        </div>
+        <div class="row signature">
+            <input type="checkbox" name="signature" id="signature" />
+            <label for="signature">Я согласен с условиями обработки персональных данных</label>
+        </div>
+
+        <div class="row">
+            <input type="submit" name="submit" value="Отправить заявку" />
+        </div>
+    </form>
+</div>
+
+<script type="text/javascript">
+    var form = new listen_form({'id_form':'#main_form', 'handler':'#handler'});
+</script>

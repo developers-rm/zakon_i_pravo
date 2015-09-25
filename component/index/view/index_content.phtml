@@ -1,12 +1,17 @@
 <section id="form_section">
     <div id="form_section_inside">
-        <div id="form">
-            <header><h2>бесплатная юридическая консультация</h2></header>
-            <?php include ROOT_PATH.'/component/index/view/forms/main.phtml';?>
-        </div>
-        <div id="notify">
-            <div id="blueline">
-                <a href="#">сообщить О фактах коррупции</a>
+        <div style="position:relative;">
+            <div>
+                <div id="form" data-func="window_opacity" class="anim_scale animation">                    
+                    <header><h2>бесплатная юридическая консультация</h2></header>
+                    <?php include ROOT_PATH.'/component/index/view/forms/main_anim.phtml';?>
+                </div>
+            </div>
+            
+            <div id="notify">
+                <div id="blueline">
+                    <a href="#">сообщить О фактах коррупции</a>
+                </div>
             </div>
         </div>
     </div>
@@ -18,7 +23,9 @@
             <header class="title">
                 <?=!empty($item["h1"]) ? "<h2>{$item["h1"]}</h2>" : ""?>
             </header>
-            <?=$item["text"]?>
+            <nav id="services-list">
+                <?php include ROOT_PATH.'/component/content/view/services/services.list.phtml';?>
+            </nav>
         </article>
     </div>
     <div id="maps">

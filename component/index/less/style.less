@@ -62,6 +62,12 @@ p {
     background-color:@blue;
 }
 
+ul {
+    li {
+        color:@blue;
+    }
+}
+
 #img-promo-price,
 #img-promo-services,
 #img-promo-services2,
@@ -102,7 +108,7 @@ p {
     ul {
         li {
             display:inline-block;
-            
+
             a {
                 display:block;
                 padding:4px;
@@ -113,8 +119,8 @@ p {
                 font-size:14px;
             }
             a.active {
-               background-color:hsl(0, 72%, 50%);
-               font-weight:bold;
+                background-color:hsl(0, 72%, 50%);
+                font-weight:bold;
             }
         }
     }
@@ -189,7 +195,7 @@ p {
     input[type="email"], 
     input[type="tel"],
     textarea {
-        display:inline-table;
+        display:inline-block;
         vertical-align:middle;
         border:1px solid @blue;  
         padding:6px;
@@ -261,6 +267,9 @@ p {
         h2 {
             .header();
             text-align:center;
+            &:before {
+                border:0 !important;
+            }
         }
     }
     form {
@@ -312,7 +321,7 @@ header#header {
         }
         .inform_section {
             .right;
-            width:690px;
+            width:551px;
             #info_block {
                 padding:13px 0 19px 40px;
                 background-color:#eeeff0;
@@ -336,7 +345,8 @@ header#header {
                     }
                 }
                 span#medium {
-                    font-size:20.62px;
+                    font-size:19px;
+                    font-weight:bold;
                 }
                 span#small {
                     .lowercase;
@@ -363,6 +373,23 @@ header#header {
             text-align:center;
             color:#fff;
             .setpadding(10px, 0);
+        }
+    }
+
+    #services-list {
+        margin-bottom:140px;
+        ul {
+            color:#285c9d;
+            li {
+                margin-bottom:12px;
+                a {
+                    text-decoration:none;
+                    color:#285c9d;
+                    &:hover {
+                        text-decoration:underline;
+                    }
+                }
+            }
         }
     }
     #left-col {
@@ -400,22 +427,7 @@ header#header {
                 }
             }
         }
-        #services-list {
-            margin-bottom:140px;
-            ul {
-                color:#285c9d;
-                li {
-                    margin-bottom:12px;
-                    a {
-                        text-decoration:none;
-                        color:#285c9d;
-                        &:hover {
-                            text-decoration:underline;
-                        }
-                    }
-                }
-            }
-        }
+
         #services-description {
             @text-color:#2d62a2;
             .setpadding(0, 0 0 140px);
@@ -501,16 +513,16 @@ header#header {
                             height:110px;
                         }
                         &:before {
-                                position:absolute;
-                                content:"";
-                                bottom:-81px;
-                                width:103px;
-                                height:65px;
-                                left:63px;
-                                background:url("/images/elements/ii.png") no-repeat left top;
-                            }
+                            position:absolute;
+                            content:"";
+                            bottom:-81px;
+                            width:103px;
+                            height:65px;
+                            left:63px;
+                            background:url("/images/elements/ii.png") no-repeat left top;
+                        }
                     }
-                    
+
 
                 }
                 &:nth-of-type(3n) {
@@ -519,7 +531,7 @@ header#header {
 
             }
         }
-        
+
         #read-response {
             header, time {
                 .setpadding(0, 0 0 10px);
@@ -555,6 +567,7 @@ header#header {
             width: 80%;
             min-width: 540px;
             margin-top:40px;
+
             form {
                 width: 80%;
                 min-width: 450px;
@@ -584,6 +597,40 @@ header#header {
         }
     }
 
+    #form {
+        .form_property();
+    }
+
+    #notify {
+        width:694px;
+        margin:0 auto 0;
+        position:relative;
+        &:before {
+            background:url("/images/alarm.png") no-repeat left center;
+            content:"";
+            position:absolute;
+            left:0;
+            top:-27px;
+            width:120px;
+            height:95px;
+        }
+        #blueline {
+            .label;
+            margin:40px 0 0 88px;
+            width:596px;
+            padding:4px !important;
+            a {
+                .uppercase;
+                color:#fff;
+                font-size:25.44px;
+                text-decoration:none;
+                display:block;
+                text-align:center;
+                font-family:Franklin Gothic Demi;
+            }
+        }
+    }
+
     #form_section {
         background:url("/images/form_section_bg.jpg") no-repeat center center;
         background-size:cover;
@@ -592,38 +639,6 @@ header#header {
         width:100%;
         #form_section_inside {
             .align-vertical();
-            #form {
-                .form_property();
-            }
-            #notify {
-                width:694px;
-                margin:0 auto 0;
-                position:relative;
-                &:before {
-                    background:url("/images/alarm.png") no-repeat left center;
-                    content:"";
-                    position:absolute;
-                    left:0;
-                    top:-27px;
-                    width:120px;
-                    height:95px;
-                }
-                #blueline {
-                    .label;
-                    margin:40px 0 0 88px;
-                    width:596px;
-                    padding:4px !important;
-                    a {
-                        .uppercase;
-                        color:#fff;
-                        font-size:25.44px;
-                        text-decoration:none;
-                        display:block;
-                        text-align:center;
-                        font-family:Franklin Gothic Demi;
-                    }
-                }
-            }
         }
     }
 
@@ -662,11 +677,11 @@ header#header {
                     line-height: 22px;
                 }
             }
-            
+
             p {
                 font-size:12.74px;
             }
-            
+
             a.readnext {
                 .button(@blue, @white, auto, 0, 8px);
                 .uppercase;
@@ -681,7 +696,7 @@ header#header {
                     text-decoration:underline;
                 }
             }
-            
+
             figure {
                 .setpadding(0,0 110px 20px 0);
                 display:inline-block;
@@ -695,7 +710,7 @@ header#header {
                     margin-right:0;
                 }
             }
-            
+
             .pagenation {
                 .setpadding(0,0 0 10px);
                 ul {
